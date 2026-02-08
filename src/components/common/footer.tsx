@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Instagram, Twitter, Linkedin, ArrowUp } from "lucide-react";
 
@@ -22,9 +22,9 @@ export default function Footer() {
             </p>
             <div className="flex gap-4">
               {[Instagram, Twitter, Linkedin].map((Icon, i) => (
-                <a key={i} href="#" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-yellow-400 hover:text-black transition-all">
+                <Link key={i} href="#" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-yellow-400 hover:text-black transition-all">
                   <Icon size={20} />
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -35,9 +35,9 @@ export default function Footer() {
               <ul className="space-y-4">
                 {["Home", "Services", "Work", "Process", "Contact"].map((item) => (
                   <li key={item}>
-                    <a href={`#${item.toLowerCase()}`} className="text-gray-400 hover:text-white font-medium transition-colors uppercase text-sm tracking-widest">
+                    <Link href={`#${item.toLowerCase()}`} className="text-gray-400 hover:text-white font-medium transition-colors uppercase text-sm tracking-widest">
                       {item}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -50,9 +50,9 @@ export default function Footer() {
                 India 380054
               </address>
               <div className="mt-8">
-                <a href="mailto:hello@swagatam.com" className="text-white font-bold hover:text-yellow-400 transition-colors underline underline-offset-8 decoration-yellow-400/30">
+                <Link href="mailto:hello@swagatam.com" className="text-white font-bold hover:text-yellow-400 transition-colors underline underline-offset-8 decoration-yellow-400/30">
                   hello@swagatam.com
-                </a>
+                </Link>
               </div>
             </div>
           </div>

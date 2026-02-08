@@ -1,14 +1,16 @@
 "use client";
-
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
 
 const navLinks = [
-  { name: "Services", href: "#services" },
-  { name: "Process", href: "#process" },
-  { name: "Portfolio", href: "#portfolio" },
-  { name: "About", href: "#about" },
+  { name: "About Us", href: "/about-us" },
+  { name: "Services", href: "/services" },
+  // { name: "Process", href: "/process" },
+  { name: "Portfolio", href: "/portfolio" },
+  { name: "Contact Us", href: "/contact" }
+  
 ];
 
 export default function Header() {
@@ -30,26 +32,26 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         
         {/* LOGO */}
-        <a href="/" className="relative group">
+        <Link href="/" className="relative group">
           <div className="text-2xl font-black tracking-tighter text-white">
             SWAGATAM <span className="text-yellow-400">.</span>
           </div>
           <div className="text-[8px] tracking-[0.4em] text-gray-500 uppercase font-bold -mt-1 group-hover:text-yellow-400 transition-colors">
             Amdavad
           </div>
-        </a>
+        </Link>
 
         {/* DESKTOP NAV */}
         <nav className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
-            <a 
+            <Link 
               key={link.name} 
               href={link.href}
               className="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors relative group"
             >
               {link.name}
               <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-yellow-400 transition-all group-hover:w-full" />
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -80,14 +82,14 @@ export default function Header() {
             className="absolute top-full left-0 w-full bg-black border-b border-white/10 p-8 flex flex-col gap-6 md:hidden"
           >
             {navLinks.map((link) => (
-              <a 
+              <Link 
                 key={link.name} 
                 href={link.href} 
                 className="text-2xl font-bold text-white uppercase tracking-tighter"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
             <button className="w-full py-4 bg-yellow-400 text-black font-bold rounded-xl">
               GET A CALL BACK
