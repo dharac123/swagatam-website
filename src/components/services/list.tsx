@@ -61,19 +61,19 @@ export default function ServiceList() {
                     <span className="text-gray-400 group-hover/item:text-white transition-colors uppercase text-sm font-bold tracking-widest">
                       {service}
                     </span>
-                    <ArrowUpRight size={14} className="text-yellow-500 opacity-0 group-hover/item:opacity-100 transition-all" />
+                    {/* <ArrowUpRight size={14} className="text-yellow-500 opacity-0 group-hover/item:opacity-100 transition-all" /> */}
                   </motion.div>
                 ))}
               </div>
             </div>
 
             {/* Back to Top Indicator */}
-            <button 
+            {/* <button 
               onClick={scrollToTop}
               className="absolute bottom-10 right-10 hidden md:flex items-center gap-2 text-[8px] font-black tracking-[0.3em] text-gray-700 uppercase rotate-90 opacity-0 group-hover:opacity-100 transition-opacity"
             >
               BACK TO TOP <ChevronUp size={10} />
-            </button>
+            </button> */}
           </div>
         ))}
       </div>

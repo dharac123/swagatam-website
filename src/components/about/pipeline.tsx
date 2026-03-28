@@ -108,7 +108,7 @@ export default function Methodology() {
         </div>
 
         {/* FOOTER CALLOUT */}
-        <motion.div 
+        {/* <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           className="mt-20 flex justify-between items-center text-[10px] font-black tracking-[0.5em] text-gray-300 uppercase"
@@ -116,7 +116,7 @@ export default function Methodology() {
           <span>Strategic Integrity</span>
           <div className="h-[1px] flex-1 mx-10 bg-gray-100" />
           <span>Creative Excellence</span>
-        </motion.div>
+        </motion.div> */}
 
       </div>
     </section>

@@ -1,73 +1,79 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  Palmtree, Mountain, Plane, Globe, 
-  MapPin, Compass, Anchor, Sun 
-} from "lucide-react";
+import Image from "next/image";
 
-const row1 = [
-  { name: "HOLIDAY CROWD", icon: Palmtree },
-  { name: "KASHMIR PORT", icon: Mountain },
-  { name: "TREXAGO", icon: Plane },
-  { name: "UNIQUE TRIP", icon: Globe },
-  { name: "TRIP IQ", icon: MapPin },
-  { name: "KINGDOM", icon: Compass },
-];
+// 1. ADD THE NUMBERS YOU WANT TO SKIP HERE
+const missingIds = [397, 398, 411, 440, 446]; // Example: put the numbers that don't exist here
 
-const row2 = [
-  { name: "ASIAN HOLIDAY", icon: Anchor },
-  { name: "DEJA VU", icon: Sun },
-  { name: "YOU WE TRAVEL", icon: Palmtree },
-  { name: "YOUR SIKKIM", icon: Mountain },
-  { name: "SEMBARK", icon: Plane },
-  { name: "SUVIDHAA", icon: Globe },
-];
+const generateImageData = (start: number, end: number) => {
+  return Array.from({ length: end - start + 1 }, (_, i) => ({
+    id: start + i,
+    src: `/${start + i}.png`, 
+    alt: `Client ${start + i}`
+  }))
+  // 2. THIS FILTERS OUT THE MISSING IMAGES
+  .filter(img => !missingIds.includes(img.id));
+};
+
+const allImages = generateImageData(354, 448);
+
+// Split the remaining images into two rows
+const half = Math.ceil(allImages.length / 2);
+const row1 = allImages.slice(0, half);
+const row2 = allImages.slice(half);
 
 export default function Clients() {
   return (
-    <section className="py-24 bg-[#080808] overflow-hidden border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6 mb-16">
-        <div className="flex flex-col items-center text-center">
-          <motion.p 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="text-yellow-500 font-bold tracking-[0.4em] uppercase text-[10px] mb-4"
-          >
-            The Portfolio
-          </motion.p>
-          <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter">
-            Trusted by <span className="italic font-serif font-light text-gray-500">Global</span> Brands
-          </h2>
-        </div>
+    <section className="py-24 bg-[#050505] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
+        <motion.p 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className="text-yellow-500 font-bold tracking-[0.4em] uppercase text-[10px] mb-4"
+        >
+          OUR CLIENTELE
+        </motion.p>
+        <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter">
+          Trusted by <span className="italic font-serif font-light text-gray-500">Industry</span> Leaders
+        </h2>
       </div>
 
       <div className="relative flex flex-col gap-6 md:gap-10">
-        {/* EDGE BLUR MASK (Makes logos fade in/out) */}
-        <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-[#080808] via-transparent to-[#080808]" />
+        {/* VIGNETTE MASK */}
+        <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-[#050505] via-transparent to-[#050505]" />
 
-        {/* TOP ROW: MOVES LEFT TO RIGHT */}
+        {/* TOP ROW: SEAMLESS INFINITE LOOP */}
         <div className="flex overflow-hidden">
           <motion.div 
-            animate={{ x: ["-50%", "0%"] }}
-            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-            className="flex whitespace-nowrap gap-6 md:gap-10 pr-10"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ 
+              duration: 280, // Ultra slow
+              repeat: Infinity, 
+              ease: "linear" 
+            }}
+            className="flex whitespace-nowrap gap-6 md:gap-10"
           >
-            {[...row1, ...row1].map((brand, i) => (
-              <LogoPlaceholder key={i} brand={brand} />
+            {/* Doubling the filtered array for infinite loop */}
+            {[...row1, ...row1].map((logo, i) => (
+              <LogoCard key={`top-${i}`} logo={logo} />
             ))}
           </motion.div>
         </div>
 
-        {/* BOTTOM ROW: MOVES RIGHT TO LEFT (VICE VERSA) */}
+        {/* BOTTOM ROW: SEAMLESS INFINITE LOOP (REVERSE) */}
         <div className="flex overflow-hidden">
           <motion.div 
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
-            className="flex whitespace-nowrap gap-6 md:gap-10 pr-10"
+            animate={{ x: ["-50%", "0%"] }}
+            transition={{ 
+              duration: 280, // Slightly different speed for natural feel
+              repeat: Infinity, 
+              ease: "linear" 
+            }}
+            className="flex whitespace-nowrap gap-6 md:gap-10"
           >
-            {[...row2, ...row2].map((brand, i) => (
-              <LogoPlaceholder key={i} brand={brand} />
+            {[...row2, ...row2].map((logo, i) => (
+              <LogoCard key={`bottom-${i}`} logo={logo} />
             ))}
           </motion.div>
         </div>
@@ -76,20 +82,23 @@ export default function Clients() {
   );
 }
 
-function LogoPlaceholder({ brand }: { brand: any }) {
-  const Icon = brand.icon;
+function LogoCard({ logo }: { logo: { src: string; alt: string } }) {
   return (
-    <div className="group relative w-48 h-24 md:w-64 md:h-32 bg-white/[0.02] border border-white/5 rounded-3xl flex flex-col items-center justify-center gap-3 transition-all duration-500 hover:bg-white/[0.05] hover:border-yellow-500/30">
-      {/* Abstract Icon acting as a logo */}
-      <Icon className="text-white/80 group-hover:text-yellow-500 transition-colors duration-500" size={32} />
+    // LARGE SIZE PRESERVED
+    <div className="group relative w-40 h-40 md:w-56 md:h-56 flex-shrink-0 bg-[#0a0a0a] border border-white/10 rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 hover:border-yellow-500/50">
       
-      {/* Brand Text styled like a logo */}
-      <span className="text-[10px] md:text-xs font-black tracking-[0.3em] text-white/70 group-hover:text-white transition-colors duration-500 uppercase">
-        {brand.name}
-      </span>
+      <div className="relative w-full h-full transition-all duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100">
+        <Image
+          src={logo.src}
+          alt={logo.alt}
+          fill
+          className="object-cover" 
+          sizes="(max-width: 768px) 160px, 224px"
+          priority={false}
+        />
+      </div>
 
-      {/* Subtle Glow Effect on Hover */}
-      <div className="absolute inset-0 bg-yellow-500/5 opacity-0 group-hover:opacity-100 blur-2xl transition-opacity rounded-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     </div>
   );
 }

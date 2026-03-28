@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { i } from "framer-motion/client";
 import { ArrowRight } from "lucide-react";
 import { useState, useRef } from "react";
+import Link from "next/link";
 
 export default function CTA() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -32,7 +34,7 @@ export default function CTA() {
         
         {/* HEADER */}
         <div className="max-w-4xl mx-auto mb-16">
-          <motion.div 
+          {/* <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             className="flex items-center justify-center gap-3 mb-8"
@@ -40,7 +42,7 @@ export default function CTA() {
             <div className="w-10 h-[1px] bg-yellow-500" />
             <span className="text-yellow-500 font-bold tracking-[0.5em] uppercase text-[10px]">The Finale</span>
             <div className="w-10 h-[1px] bg-yellow-500" />
-          </motion.div>
+          </motion.div> */}
 
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -64,12 +66,12 @@ export default function CTA() {
             transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
             className="group relative w-48 h-48 md:w-64 md:h-64 bg-yellow-400 rounded-full flex flex-col items-center justify-center transition-shadow hover:shadow-[0_0_60px_-10px_rgba(234,179,8,0.6)]"
           >
-            <div className="relative z-10 flex flex-col items-center">
+            <Link href="/contact" className="relative z-10 flex flex-col items-center">
               <span className="text-black font-black text-lg md:text-xl tracking-tight uppercase leading-none">
                 Get a <br /> Call Back
               </span>
               <ArrowRight className="mt-4 text-black group-hover:translate-x-3 transition-transform duration-500" size={32} strokeWidth={3} />
-            </div>
+            </Link>
 
             {/* Pulsing Outer Ring */}
             <div className="absolute inset-0 border border-yellow-400/30 rounded-full scale-110 group-hover:scale-125 transition-transform duration-700 animate-pulse" />

@@ -38,17 +38,14 @@ export default function TeamSection() {
               className="flex items-center gap-3 mb-6"
             >
               <div className="w-12 h-[1px] bg-yellow-400" />
-              <span className="text-yellow-500 font-bold text-xs tracking-[0.4em] uppercase">The Humans</span>
+              <span className="text-yellow-500 font-bold text-xs tracking-[0.4em] uppercase">Our Team</span>
             </motion.div>
             
             <h2 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.85] text-white">
-              The <span className="text-yellow-400">Production</span> <br /> 
-              <span className="text-gray-500 italic font-serif font-light">Crew.</span>
+              The <span className="text-yellow-400">Creative</span> <br /> 
+              <span className="text-gray-500 italic font-serif font-light">Minds.</span>
             </h2>
           </div>
-          <p className="text-gray-500 font-bold text-[10px] tracking-[0.5em] uppercase pb-4">
-            15 Multidisciplinary Visionaries
-          </p>
         </div>
 
         {/* 2. UNEVEN STAGGERED GRID */}

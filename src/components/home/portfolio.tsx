@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 const projects = [
@@ -110,9 +111,9 @@ export default function Portfolio() {
 
         {/* CTA */}
         <div className="mt-20 flex justify-center">
-          <button className="group px-12 py-5 bg-black text-white rounded-full font-bold tracking-widest text-xs hover:bg-yellow-400 hover:text-black transition-all flex items-center gap-4">
+          <Link href="/portfolio" className="group px-12 py-5 bg-black text-white rounded-full font-bold tracking-widest text-xs hover:bg-yellow-400 hover:text-black transition-all flex items-center gap-4">
             VIEW ALL PROJECTS <ArrowUpRight size={16} />
-          </button>
+          </Link>
         </div>
       </div>
     </section>

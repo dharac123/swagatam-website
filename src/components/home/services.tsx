@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { BarChart3, Sparkles, Users, Layout, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 const services = [
   {
@@ -114,9 +115,9 @@ export default function Services() {
                     </p>
                   </div>
 
-                  <div className="mt-12 flex items-center gap-2 text-xs font-bold tracking-widest text-white/40 group-hover:text-yellow-400 transition-colors">
+                  <Link href="/services" className="mt-12 flex items-center gap-2 text-xs font-bold tracking-widest text-white/40 group-hover:text-yellow-400 transition-colors">
                     LEARN MORE <ArrowUpRight size={14} />
-                  </div>
+                  </Link>
                 </div>
               </motion.div>
             );

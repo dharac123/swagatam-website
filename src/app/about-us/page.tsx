@@ -12,7 +12,7 @@ export default function Services() {
     <Header />
     <AboutHero />
     <OurStory />
-    <TeamSection />
+    {/* <TeamSection /> */}
     <Methodology />
     <Testimonials />
     <Footer />

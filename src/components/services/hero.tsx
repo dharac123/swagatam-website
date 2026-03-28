@@ -56,7 +56,7 @@ export default function ServiceHero() {
           </span>
         </motion.div> */}
 
-        <h1 className="text-6xl md:text-[10vw] font-black text-white leading-[0.85] tracking-tighter">
+        <h1 className="text-5xl md:text-[10vw] font-black text-white leading-[0.85] tracking-tighter">
           <motion.span
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}

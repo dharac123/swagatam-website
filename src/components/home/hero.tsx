@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Link from "next/link";
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -38,7 +39,7 @@ export default function Hero() {
       {/* 2. MAIN CONTENT */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20 min-h-screen flex flex-col justify-center">
         
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
@@ -48,7 +49,7 @@ export default function Hero() {
           <span className="text-yellow-400 font-medium tracking-[0.2em] uppercase text-xs">
             Welcome to Amdavad's Finest
           </span>
-        </motion.div>
+        </motion.div> */}
 
         <div className="max-w-5xl">
           <motion.h1
@@ -80,20 +81,20 @@ export default function Hero() {
             className="mt-12 flex flex-wrap items-center gap-8"
           >
             {/* Main Button */}
-            <button className="group relative px-8 py-4 bg-yellow-400 text-black font-bold rounded-full overflow-hidden transition-all hover:pr-12">
-              <span className="relative z-10">GET A CALL BACK</span>
+            <Link href="/contact" className="group relative px-8 py-4 bg-yellow-400 text-black font-bold rounded-full overflow-hidden transition-all hover:pr-12">
+              <span className="relative z-10">CONNECT</span>
               <span className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all">
                 →
               </span>
-            </button>
+            </Link>
 
             {/* Secondary Button */}
-            <button className="group flex items-center gap-3 text-white font-medium hover:text-yellow-400 transition-colors">
+            <Link href="/services" className="group flex items-center gap-3 text-white font-medium hover:text-yellow-400 transition-colors">
               <div className="flex items-center justify-center w-12 h-12 rounded-full border border-white/20 group-hover:border-yellow-400 transition-colors">
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </div>
               WHAT WE DO
-            </button>
+            </Link>
           </motion.div>
         </div>
       </div>
