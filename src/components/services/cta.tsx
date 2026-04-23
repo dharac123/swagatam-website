@@ -1,46 +1,84 @@
 "use client";
-
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { 
+  Layers, 
+  Cpu, 
+  Activity, 
+  Box, 
+  ShieldCheck, 
+  Sparkles,
+  ChevronRight
+} from "lucide-react";
 
-export default function ServiceCTA() {
+const stats = [
+  { label: "Years Of Experience", value: "3+" },
+  { label: "Brands Scaled", value: "50+" },
+  { label: "Asset Production", value: "1.2k+" },
+  { label: "Performance Delta", value: "85%" },
+  { label: "Revenue Impact", value: "₹25Cr" },
+];
+
+const techNodes = [
+  { Icon: Layers, pos: "top-0 left-1/2 -translate-x-1/2" },
+  { Icon: Cpu, pos: "top-1/4 right-0" },
+  { Icon: Activity, pos: "bottom-1/4 right-2" },
+  { Icon: Box, pos: "bottom-0 left-1/2 -translate-x-1/2" },
+  { Icon: ShieldCheck, pos: "bottom-1/4 left-2" },
+  { Icon: Sparkles, pos: "top-1/4 left-0" },
+];
+
+export default function AgencyHero() {
   return (
-    <section className="py-24 md:py-40 bg-white text-black text-center relative overflow-hidden">
-       {/* 1. HIGH-END WATERMARK (Responsive Scaling) */}
-       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] select-none pointer-events-none w-full">
-          <h2 className="text-[30vw] md:text-[25vw] font-black uppercase tracking-tighter leading-none whitespace-nowrap">
-            ACTION
-          </h2>
-       </div>
-
-       <div className="relative z-10 max-w-5xl mx-auto px-6">
-          {/* 2. RESPONSIVE HEADING */}
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] md:leading-none mb-10 md:mb-16"
-          >
-             Ready to bring your <br className="hidden sm:block" />
-             <span className="italic font-serif font-light text-gray-400">ideas to</span> life?
-          </motion.h2>
+    <section className="bg-white pt-24 pb-12 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        {/* HERO TOP: 2-COLUMN LAYOUT */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-16 mb-24">
           
-          {/* 3. RESPONSIVE BUTTON (Full-width on mobile, auto on desktop) */}
-          <div className="flex justify-center">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto"
+          {/* LEFT: CONTENT */}
+          <div className="w-full lg:w-1/2 space-y-10 text-center lg:text-left">
+           
+
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.85] text-black uppercase"
             >
-              <Link 
-                href="/contact" 
-                className="block sm:inline-block px-8 md:px-14 py-5 md:py-6 bg-yellow-400 text-black font-black text-[10px] md:text-xs tracking-[0.3em] uppercase rounded-full hover:bg-black hover:text-white transition-all shadow-xl md:shadow-2xl"
-              >
-                START THE PRODUCTION
-              </Link>
-            </motion.div>
+              Grow Your <br />
+              Business <span className="italic font-serif font-light text-zinc-300 lowercase">&</span> Revenue.
+            </motion.h1>
+
+            <div className="flex">
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link 
+              href="/contact" 
+              className="bg-yellow-400 text-black px-12 py-5 rounded-full font-black text-[10px] tracking-[0.3em] uppercase hover:bg-black hover:text-white transition-all shadow-2xl"
+            >
+              Book a Free Strategy Call
+            </Link>
+          </motion.div>
+        </div>
           </div>
-       </div>
+
+          {/* RIGHT: ABSTRACT ECOSYSTEM */}
+          <div className="w-full lg:w-1/2 relative flex justify-center items-center">
+            <Image src="/social.jpg" alt="Abstract Tech Ecosystem" width={500} height={500} className="rounded-3xl object-cover" />
+          </div>
+        </div>
+
+      </div>
+
+      <style jsx>{`
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+          animation: spin-slow 40s linear infinite;
+        }
+      `}</style>
     </section>
   );
 }

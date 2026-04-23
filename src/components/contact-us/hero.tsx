@@ -10,7 +10,6 @@ import { useRef, useState } from "react";
 
 const FloatingSocials = () => {
   const icons = [
-    // Reduced base sizes for mobile, keeping your exact positions and colors
     { Icon: Instagram, color: "text-pink-500", top: "10%", left: "5%", size: 40, mdSize: 100, d: 0 },
     { Icon: Facebook, color: "text-blue-600", top: "15%", left: "85%", size: 50, mdSize: 120, d: 2 },
     { Icon: Youtube, color: "text-red-600", top: "55%", left: "-2%", size: 60, mdSize: 140, d: 1 },
@@ -32,7 +31,6 @@ const FloatingSocials = () => {
           style={{ top: item.top, left: item.left }}
           className={`absolute ${item.color} filter blur-[1px] md:blur-0`}
         >
-          {/* Responsive Icon Sizing */}
           <div className="md:hidden">
             <item.Icon size={item.size} strokeWidth={0.5} />
           </div>
@@ -113,10 +111,9 @@ export default function ContactPage() {
           </p>
         </div>
 
-        {/* Responsive Grid: Stacks on mobile, 2-cols on Desktop */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
           
-          {/* LEFT: INFO CARD (Order 2 on mobile to put form first) */}
+          {/* LEFT: INFO CARD */}
           <div className="space-y-6 md:space-y-8 order-2 lg:order-1">
             <div className="p-6 md:p-8 rounded-3xl md:rounded-[2.5rem] bg-white/[0.03] border border-white/5 hover:border-yellow-400/20 transition-all duration-500 space-y-6 md:space-y-8">
                 <Link href="mailto:swagatamdavad@gmail.com" className="group flex items-center justify-between">
@@ -141,43 +138,48 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* RIGHT: THE FORM (Order 1 on mobile) */}
+          {/* RIGHT: THE FORM (Restyled Typography) */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             className="order-1 lg:order-2 p-6 md:p-14 rounded-3xl md:rounded-[3.5rem] bg-white/[0.02] border border-white/10 backdrop-blur-3xl relative overflow-hidden"
           >
-            <form onSubmit={handleWhatsAppSubmit} className="space-y-6 md:space-y-10 relative z-10">
-              <div className="space-y-1 group">
-                <label className="text-[9px] font-black tracking-[0.4em] text-gray-500 uppercase ml-2 italic">Full Name</label>
-                <input required name="name" type="text" className="w-full bg-transparent border-b border-white/10 p-3 md:p-4 focus:outline-none focus:border-yellow-400 transition-all text-base md:text-lg placeholder:text-gray-700" placeholder="Your Name" />
+            <form onSubmit={handleWhatsAppSubmit} className="space-y-8 md:space-y-12 relative z-10">
+              
+              {/* Proper Agency Input - Full Name */}
+              <div className="space-y-2 group">
+                <label className="text-[10px] font-black tracking-[0.5em] text-zinc-500 uppercase ml-1">Full Name</label>
+                <input required name="name" type="text" className="w-full bg-transparent border-b-2 border-white/10 p-4 focus:outline-none focus:border-yellow-400 transition-all text-xl md:text-2xl font-bold tracking-tight placeholder:text-zinc-800" placeholder="John Doe" />
               </div>
 
-              <div className="space-y-1 group">
-                <label className="text-[9px] font-black tracking-[0.4em] text-gray-500 uppercase ml-2 italic">Your Email</label>
-                <input required name="email" type="email" className="w-full bg-transparent border-b border-white/10 p-3 md:p-4 focus:outline-none focus:border-yellow-400 transition-all text-base md:text-lg placeholder:text-gray-700" placeholder="email@brand.com" />
+              {/* Proper Agency Input - Email */}
+              <div className="space-y-2 group">
+                <label className="text-[10px] font-black tracking-[0.5em] text-zinc-500 uppercase ml-1">Your Email</label>
+                <input required name="email" type="email" className="w-full bg-transparent border-b-2 border-white/10 p-4 focus:outline-none focus:border-yellow-400 transition-all text-xl md:text-2xl font-bold tracking-tight placeholder:text-zinc-800" placeholder="hello@brand.com" />
               </div>
 
-              <div className="space-y-1 group">
-                <label className="text-[9px] font-black tracking-[0.4em] text-gray-500 uppercase ml-2 italic">Phone Number</label>
+              {/* Proper Agency Input - Phone */}
+              <div className="space-y-2 group">
+                <label className="text-[10px] font-black tracking-[0.5em] text-zinc-500 uppercase ml-1">Phone Number</label>
                 <input 
                   required 
                   name="phone" 
                   type="tel" 
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className={`w-full bg-transparent border-b ${phoneError ? 'border-red-500' : 'border-white/10'} p-3 md:p-4 focus:outline-none focus:border-yellow-400 transition-all text-base md:text-lg placeholder:text-gray-700`} 
-                  placeholder="+91..." 
+                  className={`w-full bg-transparent border-b-2 ${phoneError ? 'border-red-500' : 'border-white/10'} p-4 focus:outline-none focus:border-yellow-400 transition-all text-xl md:text-2xl font-bold tracking-tight placeholder:text-zinc-800`} 
+                  placeholder="+91 0000 000 000" 
                 />
               </div>
 
-              <div className="space-y-1 group">
-                <label className="text-[9px] font-black tracking-[0.4em] text-gray-500 uppercase ml-2 italic">Tell us about your project</label>
-                <textarea required name="message" rows={2} className="w-full bg-transparent border-b border-white/10 p-3 md:p-4 focus:outline-none focus:border-yellow-400 transition-all text-base md:text-lg placeholder:text-gray-700 resize-none" placeholder="Brand goals..." />
+              {/* Proper Agency Input - Message */}
+              <div className="space-y-2 group">
+                <label className="text-[10px] font-black tracking-[0.5em] text-zinc-500 uppercase ml-1">The Project Brief</label>
+                <textarea required name="message" rows={1} className="w-full bg-transparent border-b-2 border-white/10 p-4 focus:outline-none focus:border-yellow-400 transition-all text-xl md:text-2xl font-bold tracking-tight placeholder:text-zinc-800 resize-none" placeholder="What are we scaling?" />
               </div>
 
-              <button type="submit" className="w-full py-4 md:py-6 bg-yellow-400 text-black font-black tracking-[0.3em] uppercase rounded-full hover:bg-white transition-all flex items-center justify-center gap-3 text-sm md:text-base">
-                SUBMIT BRIEF <MessageSquare size={18} />
+              <button type="submit" className="w-full py-6 md:py-8 bg-yellow-400 text-black font-black tracking-[0.4em] uppercase rounded-2xl hover:bg-white transition-all flex items-center justify-center gap-4 text-xs md:text-sm shadow-[0_20px_50px_rgba(250,204,21,0.15)]">
+                SUBMIT BRIEF <MessageSquare size={18} strokeWidth={3} />
               </button>
             </form>
           </motion.div>
