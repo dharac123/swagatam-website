@@ -64,7 +64,7 @@ export default function AgencyHero() {
 
           {/* RIGHT: ABSTRACT ECOSYSTEM */}
           <div className="w-full lg:w-1/2 relative flex justify-center items-center">
-            <Image src="/social.jpg" alt="Abstract Tech Ecosystem" width={500} height={500} className="rounded-3xl object-cover" />
+            <Image src="/sm1.png" alt="Abstract Tech Ecosystem" width={500} height={500} className="rounded-3xl object-cover" />
           </div>
         </div>
 

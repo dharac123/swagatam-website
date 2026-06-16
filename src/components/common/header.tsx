@@ -35,7 +35,7 @@ export default function Header() {
         
         {/* LOGO */}
         <Link href="/" className="relative group">
-          <Image src="/swg_logo.png" alt="Logo" width={60} height={60} className="w-18 h-18" />
+          <Image src="/swg_logo.png" alt="Logo" width={60} height={60} className="w-18 h-18 rounded-full" />
         </Link>
 
         {/* DESKTOP NAV - Now hidden until XL */}

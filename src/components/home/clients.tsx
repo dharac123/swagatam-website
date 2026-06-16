@@ -3,33 +3,60 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-// 1. ADD THE NUMBERS YOU WANT TO SKIP HERE
-const missingIds = [397, 398, 411, 440, 446]; // Example: put the numbers that don't exist here
+// 1. CONFIGURE YOUR LOGOS HERE
+const priorityTop = [1, 2, 3, 4, 358];    // Seen first in Top Row
+const priorityBottom = [5, 6, 7, 443, 442]; // Seen first in Bottom Row
+const missingIds = [397, 398, 411, 440, 446]; 
 
-const generateImageData = (start: number, end: number) => {
-  return Array.from({ length: end - start + 1 }, (_, i) => ({
-    id: start + i,
-    src: `/${start + i}.png`, 
-    alt: `Client ${start + i}`
-  }))
-  // 2. THIS FILTERS OUT THE MISSING IMAGES
-  .filter(img => !missingIds.includes(img.id));
+const generateRows = (start: number, end: number) => {
+  // Create the list from the range
+  const rangeArray = Array.from({ length: end - start + 1 }, (_, i) => start + i);
+  
+  // Combine priority IDs and range IDs into one unique list
+  const combinedIds = Array.from(new Set([...priorityTop, ...priorityBottom, ...rangeArray]));
+
+  // Convert IDs into Logo objects
+  const allLogos = combinedIds
+    .map(id => ({
+      id,
+      src: `/${id}.png`, 
+      alt: `Client ${id}`
+    }))
+    // Remove missing ones and any ID that was just a placeholder
+    .filter(img => !missingIds.includes(img.id));
+
+  // Extract Top Priority (Logos that MUST be in Row 1)
+  const topPriorityLogos = allLogos.filter(img => priorityTop.includes(img.id));
+  
+  // Extract Bottom Priority (Logos that MUST be in Row 2)
+  const bottomPriorityLogos = allLogos.filter(img => priorityBottom.includes(img.id));
+  
+  // The rest of the logos
+  const remainingLogos = allLogos.filter(img => 
+    !priorityTop.includes(img.id) && !priorityBottom.includes(img.id)
+  );
+
+  // Distribute remaining logos
+  const half = Math.ceil(remainingLogos.length / 2);
+  
+  // Row 1 starts with Top Priority
+  const row1 = [...topPriorityLogos, ...remainingLogos.slice(0, half)];
+  // Row 2 starts with Bottom Priority
+  const row2 = [...bottomPriorityLogos, ...remainingLogos.slice(half)];
+
+  return { row1, row2 };
 };
 
-const allImages = generateImageData(354, 448);
-
-// Split the remaining images into two rows
-const half = Math.ceil(allImages.length / 2);
-const row1 = allImages.slice(0, half);
-const row2 = allImages.slice(half);
+const { row1, row2 } = generateRows(354, 448);
 
 export default function Clients() {
   return (
     <section className="py-24 bg-[#050505] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
         <motion.p 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           className="text-yellow-500 font-bold tracking-[0.4em] uppercase text-[10px] mb-4"
         >
           OUR CLIENTELE
@@ -41,32 +68,36 @@ export default function Clients() {
 
       <div className="relative flex flex-col gap-6 md:gap-10">
         {/* VIGNETTE MASK */}
-        <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-[#050505] via-transparent to-[#050505]" />
+        <div className="absolute inset-0 z-10 pointer-events-none bg-[linear-gradient(to_right,#050505_0%,transparent_20%,transparent_80%,#050505_100%)]" />
 
-        {/* TOP ROW: SEAMLESS INFINITE LOOP */}
+        {/* TOP ROW: Moves Left */}
         <div className="flex overflow-hidden">
           <motion.div 
-            animate={{ x: ["0%", "-50%"] }}
+            initial={{ x: 0 }}
+            whileInView={{ x: ["0%", "-50%"] }}
+            viewport={{ once: false }}
             transition={{ 
-              duration: 280, // Ultra slow
+              duration: 150, 
               repeat: Infinity, 
               ease: "linear" 
             }}
             className="flex whitespace-nowrap gap-6 md:gap-10"
           >
-            {/* Doubling the filtered array for infinite loop */}
             {[...row1, ...row1].map((logo, i) => (
               <LogoCard key={`top-${i}`} logo={logo} />
             ))}
           </motion.div>
         </div>
 
-        {/* BOTTOM ROW: SEAMLESS INFINITE LOOP (REVERSE) */}
+        {/* BOTTOM ROW: Moves Right */}
         <div className="flex overflow-hidden">
           <motion.div 
-            animate={{ x: ["-50%", "0%"] }}
+            // Starting at -50% ensures the bottom priority logos are visible immediately
+            initial={{ x: "-50%" }}
+            whileInView={{ x: ["-50%", "0%"] }}
+            viewport={{ once: false }}
             transition={{ 
-              duration: 280, // Slightly different speed for natural feel
+              duration: 150, 
               repeat: Infinity, 
               ease: "linear" 
             }}
@@ -84,21 +115,17 @@ export default function Clients() {
 
 function LogoCard({ logo }: { logo: { src: string; alt: string } }) {
   return (
-    // LARGE SIZE PRESERVED
-    <div className="group relative w-40 h-40 md:w-56 md:h-56 flex-shrink-0 bg-[#0a0a0a] border border-white/10 rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 hover:border-yellow-500/50">
-      
-      <div className="relative w-full h-full transition-all duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100">
+    <div className="group relative w-40 h-40 md:w-56 md:h-56 flex-shrink-0 bg-[#0a0a0a] border border-white/5 rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-500 hover:border-yellow-500/40">
+      <div className="relative w-full h-full opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
         <Image
           src={logo.src}
           alt={logo.alt}
           fill
           className="object-cover" 
           sizes="(max-width: 768px) 160px, 224px"
-          priority={false}
         />
       </div>
-
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-20 group-hover:opacity-40 transition-opacity" />
     </div>
   );
 }

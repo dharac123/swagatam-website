@@ -1,63 +1,62 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { 
   Palette, 
   Megaphone, 
-  ShoppingBag, 
   Search, 
-  Code2, 
-  Video,
-  Linkedin
+  Linkedin,
+  Share2,
+  Users,
+  Mic
 } from "lucide-react";
 
 const serviceActs = [
   // ROW 1: Long Data Cards (2 Columns)
   {
-    title: "Podcast Production & Growth",
-    desc: "We help you turn your podcast into a powerful content and growth engine. From strategy and recording guidance to editing, publishing, and distribution, we handle the entire process end-to-end. Our focus goes beyond just production — we optimize each episode for engagement, repurpose content into high-performing clips, and position your brand as an authority in your niche. Whether you're building an audience or generating leads, we make sure your podcast delivers real business impact.",
-    icon: <ShoppingBag className="w-8 h-8 text-yellow-500" />,
+    title: "Social Media Marketing & Management",
+    desc: "We craft scroll-stopping content and community-focused strategies to grow your presence across all major platforms. From content pillars and aesthetic grids to engagement hacks and community management, we ensure your brand doesn't just exist on social—it leads. Our approach focuses on building a loyal tribe through storytelling that resonates and moves your audience to take action.",
+    icon: <Share2 className="w-8 h-8 text-yellow-500" />,
     span: "lg:col-span-6",
   },
   {
-    title: "UGC Ad Studio",
-    desc: "We create high-converting UGC ads that feel native, authentic, and impossible to ignore. Our team handles everything — from sourcing creators and scripting scroll-stopping hooks to producing and editing content optimized for performance. Every video is built with one goal in mind: driving conversions. By combining real human storytelling with proven ad frameworks, we help your brand stand out in crowded feeds and scale winning creatives across Meta and Google.",
-    icon: <Video className="w-8 h-8 text-yellow-500" />,
+    title: "Meta & Google Ads Studio",
+    desc: "Performance-driven paid advertising designed to scale your business profitably. We combine creative testing with data-driven targeting to maximize your ROI across the world's most powerful ad networks. Every campaign is built on a foundation of proven ad frameworks, constant A/B testing, and meticulous conversion tracking to ensure your marketing spend is an investment, not an expense.",
+    icon: <Megaphone className="w-8 h-8 text-yellow-500" />,
     span: "lg:col-span-6",
   },
   
   // ROW 2: Short Data Cards (3 Columns)
   {
-    title: "SEO",
-    desc: "We help your brand rank higher and grow organically with strategic, data-driven SEO. We improve traffic quality, visibility, and conversions for long-term growth.",
-    icon: <Search className="w-8 h-8 text-yellow-500" />,
+    title: "Influencer Marketing",
+    desc: "We connect your brand with the right creators to build authentic trust and reach targeted audiences through strategic partnerships and organic-feeling campaigns.",
+    icon: <Users className="w-8 h-8 text-yellow-500" />,
     span: "lg:col-span-4",
   },
   {
-    title: "Meta & Google Ads",
-    desc: "We run performance-driven ad campaigns designed to scale profitably. We focus on maximizing ROI with data-backed strategies that consistently deliver results.",
-    icon: <Megaphone className="w-8 h-8 text-yellow-500" />,
+    title: "Podcast Production",
+    desc: "End-to-end production focusing on authority building. We handle everything from recording guidance to editing and distribution for maximum reach.",
+    icon: <Mic className="w-8 h-8 text-yellow-500" />,
     span: "lg:col-span-4",
   },
   {
     title: "Graphic Design",
-    desc: "We create scroll-stopping visuals that capture attention and build brand trust. Every asset is crafted to boost engagement and drive real conversions.",
+    desc: "High-impact visual branding and digital assets crafted to stop the scroll. We build trust through premium, consistent design across all your brand touchpoints.",
     icon: <Palette className="w-8 h-8 text-yellow-500" />,
     span: "lg:col-span-4",
   },
 
   // ROW 3: Medium/Long Data Cards (2 Columns)
   {
-    title: "Web Development",
-    desc: "We design and develop fast, responsive, and conversion-focused websites. Whether it’s landing pages or full sites, every build is optimized to deliver better user experience, higher conversions, and lower ad costs.",
-    icon: <Code2 className="w-8 h-8 text-yellow-500" />,
+    title: "LinkedIn Personal Branding",
+    desc: "We position founders and executives as industry authorities through high-value content and strategic networking. From profile optimization to thought-leading posts, we build your digital legacy and attract premium opportunities. Our systems ensure consistent growth and position you as the go-to voice in your specific niche.",
+    icon: <Linkedin className="w-8 h-8 text-yellow-500" />,
     span: "lg:col-span-6",
   },
   {
-    title: "LinkedIn Personal Branding",
-    desc: "We build and scale powerful LinkedIn personal brands that attract opportunities, leads, and authority. From content strategy and post creation to profile optimization and consistent growth systems, we position you as a go-to voice in your industry. Every post is crafted to spark engagement and build trust.",
-    icon: <Linkedin className="w-8 h-8 text-yellow-500" />,
+    title: "Search Engine Optimization (SEO)",
+    desc: "Long-term organic growth driven by technical excellence and high-quality content strategies. We help your brand get discovered by the right people at the right time by improving traffic quality, domain authority, and search visibility. Our data-backed approach ensures you stay ahead of competitors in the evolving search landscape.",
+    icon: <Search className="w-8 h-8 text-yellow-500" />,
     span: "lg:col-span-6",
   },
 ];
