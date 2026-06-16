@@ -6,11 +6,11 @@ import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
-    title: "SHIVA'S CAFE",
+    title: "522 The Restaurant",
     category: "Brand Film & Identity",
     size: "md:col-span-8",
     // Premium boutique cafe aesthetic
-    img: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200",
+    img: "/522-dining.avif",
     stats: "40% Footfall"
   },
   {
@@ -22,19 +22,19 @@ const projects = [
     stats: "4.5x ROAS"
   },
   {
-    title: "MYKA CAFE",
+    title: "Lijjat Khaman",
     category: "Aesthetic Content",
     size: "md:col-span-4",
     // Modern Gen-Z aesthetic interior
-    img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800",
+    img: "/lijjat-khaman.jpg",
     stats: "200k+ Reach"
   },
   {
-    title: "TREXAGO HOLIDAYS",
+    title: "Holidays Crowd",
     category: "Lead Generation",
     size: "md:col-span-8",
     // Stunning wanderlust/travel scenery
-    img: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=1200",
+    img: "/holiday-crowd.avif",
     stats: "35% Lower CPL"
   },
 ];
@@ -89,16 +89,16 @@ export default function Portfolio() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
 
               {/* Impact Tag (Stats) */}
-              <div className="absolute top-8 left-8 px-5 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/10 text-yellow-500 text-[10px] font-black tracking-widest uppercase">
+              {/* <div className="absolute top-8 left-8 px-5 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/10 text-yellow-500 text-[10px] font-black tracking-widest uppercase">
                 {p.stats}
-              </div>
+              </div> */}
 
               {/* Details */}
               <div className="absolute inset-0 p-10 flex flex-col justify-end">
-                <div className="flex items-center gap-3 mb-4">
+                {/* <div className="flex items-center gap-3 mb-4">
                   <span className="w-8 h-[1px] bg-yellow-500" />
                   <span className="text-yellow-500 text-[10px] font-black uppercase tracking-widest">{p.category}</span>
-                </div>
+                </div> */}
                 
                 <div className="flex items-end justify-between">
                   <h3 className="text-4xl md:text-5xl font-black tracking-tighter uppercase max-w-sm group-hover:text-yellow-400 transition-colors">
@@ -106,9 +106,9 @@ export default function Portfolio() {
                   </h3>
                   
                   {/* Floating Action Button */}
-                  <div className="w-16 h-16 rounded-full bg-yellow-500 flex items-center justify-center text-black translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 shadow-[0_0_40px_rgba(234,179,8,0.3)]">
+                  {/* <div className="w-16 h-16 rounded-full bg-yellow-500 flex items-center justify-center text-black translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 shadow-[0_0_40px_rgba(234,179,8,0.3)]">
                     <ArrowUpRight size={28} strokeWidth={3} />
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </motion.div>
