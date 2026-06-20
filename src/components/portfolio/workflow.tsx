@@ -16,7 +16,7 @@ const steps = [
     id: "02",
     title: "Cinematic Execution",
     serif: "capturing the",
-    desc: "Our elite 15-member crew takes the stage, turning concepts into high-production visual assets.",
+    desc: "Our elite 22-member crew takes the stage, turning concepts into high-production visual assets.",
     icon: <Play className="w-6 h-6" />,
   },
   {

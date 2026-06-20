@@ -7,103 +7,83 @@ import { ArrowUpRight } from "lucide-react";
 const projects = [
   {
     id: "01",
-    title: "SHIVA'S CAFE",
-    serif: "the aroma of",
-    tagline: "Digital Rebranding & Footfall Strategy",
-    objective: "Recreate a business image to attract premium customers looking for a sensory experience.",
-    services: "Social Media Optimization, Brand Film, Visual Identity",
-    result: "Deployed high-production visuals leading to a 40% increase in weekend footfall.",
-    image: "/shivas.png" 
+    title: "522 THE RESTAURANT",
+    serif: "the taste of",
+    tagline: "Premium Culinary Storytelling",
+    objective: "Crafting a high-end visual narrative to position the restaurant as a premier fine-dining destination.",
+    services: "Cinematic Production, Brand Identity, Social Media Growth",
+    result: "Achieved over 500k+ organic views on launch content with a 30% increase in weekend reservations.",
+    image: "/522.png" 
   },
   {
     id: "02",
-    title: "WILLIAM JOHN'S",
-    serif: "the slice of",
-    tagline: "FMCG / Pizza Chain Performance Media",
-    objective: "Scaling a heritage pizza brand's digital presence to compete with global franchises.",
-    services: "Performance Marketing, Meta Ads, Motion Graphics",
-    result: "Achieved a 4.5x ROAS on digital campaigns across 5 city outlets.",
-    image: "/pizza.png" 
+    title: "LIJJAT KHAMAN",
+    serif: "the legacy of",
+    tagline: "Heritage Brand Modernization",
+    objective: "Rejuvenating a traditional Farsan legacy for the digital-first younger generation without losing its roots.",
+    services: "Visual Rebranding, Content Strategy, Packaging Design",
+    result: "Grew Instagram community by 40% and successfully launched their modern 'Snack-Box' campaign.",
+    image: "/lijjat.png" 
   },
   {
     id: "03",
-    title: "MYKA CAFE",
-    serif: "the heart of",
-    tagline: "Aesthetic Content & Community Building",
-    objective: "Positioning Myka as the 'go-to' aesthetic spot for Gen-Z and creators.",
-    services: "Influencer Management, UGC Content, Instagram Grid Design",
-    result: "Grew organic reach by 200k+ in 3 months through viral storytelling.",
-    image: "/myka.png" 
+    title: "HOLIDAYS CROWD",
+    serif: "the escape of",
+    tagline: "B2C Travel Lead Generation",
+    objective: "Generating high-intent inquiries for customized domestic and international holiday packages.",
+    services: "Performance Marketing, Meta Ads, Landing Page Optimization",
+    result: "Generated 2000+ qualified leads in one quarter with a 35% reduction in Cost Per Lead (CPL).",
+    image: "/holidays-crowd.png" 
   },
   {
     id: "04",
-    title: "TREXAGO HOLIDAYS",
-    serif: "the journey of",
-    tagline: "Tourism & Travel Lead Generation",
-    objective: "Generating high-intent leads for premium holiday packages and custom tours.",
-    services: "Google Ads (PPC), Landing Page Optimization, SEO",
-    result: "Reduced cost-per-lead by 35% while increasing lead quality significantly.",
-    image: "/trexago.png" 
+    title: "ASIAN HOLIDAYS",
+    serif: "the horizon of",
+    tagline: "Luxury Global Tourism Positioning",
+    objective: "Scaling the digital footprint for international luxury tours and corporate travel solutions.",
+    services: "Google Ads (PPC), SEO Strategy, Corporate Branding",
+    result: "Ranked on Page 1 for high-volume travel keywords, leading to a 2x increase in organic web traffic.",
+    image: "/asian-holidays.png" 
   },
   {
     id: "05",
-    title: "SAFARI SUTRA",
-    serif: "the wild of",
-    tagline: "Eco-Tourism Visual Storytelling",
-    objective: "Capturing the raw essence of wildlife travel to drive direct website bookings.",
-    services: "Production & Visuals, Video Editing, Content Strategy",
-    result: "Video content reached 1M+ views across travel-specific social ecosystems.",
-    image: "/safari.png" 
+    title: "WILLIAM JOHN'S",
+    serif: "the crust of",
+    tagline: "Pizza Chain Performance Scaling",
+    objective: "Driving consistent footfall and online orders across multiple franchise outlets in the city.",
+    services: "Hyper-local Meta Ads, Motion Graphics, Influencer Tie-ups",
+    result: "Delivered a consistent 4.5x ROAS on digital spend across 10+ operational locations.",
+    image: "/william.png" 
   },
   {
     id: "06",
-    title: "MAD OVER GRILLS",
-    serif: "the fire of",
-    tagline: "Restaurant Launch & Viral Marketing",
-    objective: "Creating a 'hype-driven' launch for a new grill-based restaurant concept.",
-    services: "Public Relations, Event Coverage, Meta Ads",
-    result: "Fully booked for the first 30 days post-launch via digital reservations.",
-    image: "/grills.png" 
+    title: "HOUSE OF 147",
+    serif: "the essence of",
+    tagline: "Aesthetic Lifestyle Branding",
+    objective: "Creating a 'must-visit' buzz through high-aesthetic content that highlights the unique interior and vibe.",
+    services: "UGC Campaigns, Professional Photography, Grid Design",
+    result: "Established as one of the most 'Instagrammable' spots in the city with viral creator collaborations.",
+    image: "/house147.png" 
   },
   {
     id: "07",
-    title: "KOH KINGDOM",
-    serif: "the realm of",
-    tagline: "Luxury Travel Infrastructure",
-    objective: "Rebuilding the digital identity of a premium hospitality group.",
-    services: "Website Development, Brand Identity, Personal Branding",
-    result: "Modernized digital footprint resulting in higher direct B2B inquiries.",
-    image: "/koh.png" 
+    title: "AMASA",
+    serif: "the ritual of",
+    tagline: "Boutique Cafe Production",
+    objective: "Defining a unique brand voice that emphasizes fresh ingredients and a soulful dining experience.",
+    services: "Video Production, Social Media Management, PR Strategy",
+    result: "Increased repeat customer frequency by 25% through consistent community-driven storytelling.",
+    image: "/amasa.png" 
   },
   {
     id: "08",
     title: "GRANVILLE GREENS",
-    serif: "the freshness of",
-    tagline: "Nature-First Cafe Branding",
-    objective: "Highlighting the organic and green philosophy of the Granville brand.",
-    services: "Content Marketing, Photography, Social Media Management",
-    result: "Established a consistent brand voice that increased repeat customer loyalty.",
-    image: "/greens.png" 
-  },
-  {
-    id: "09",
-    title: "522 CAFE",
-    serif: "the story of",
-    tagline: "Boutique Cafe Production",
-    objective: "Developing a high-production value video series for an artisanal cafe.",
-    services: "Video Shoots, Ad Creations, Podcast Production",
-    result: "Assets utilized for national ad campaigns driving brand awareness.",
-    image: "/522.png" 
-  },
-  {
-    id: "10",
-    title: "CHAKU KI CHAI",
-    serif: "the sip of",
-    tagline: "Traditional Brand Modernization",
-    objective: "Bringing a traditional 'Chai' brand into the modern digital landscape.",
-    services: "Social Media Optimization, Graphic Designing, PR",
-    result: "Successfully bridged the gap between traditional roots and modern audiences.",
-    image: "/chai.png" 
+    serif: "the nature of",
+    tagline: "Eco-Conscious Brand Identity",
+    objective: "Highlighting the garden-to-table philosophy and the serene, nature-first atmosphere of the brand.",
+    services: "Content Marketing, Visual Storytelling, Brand Positioning",
+    result: "Built a loyal niche audience resulting in 100% occupancy during special eco-event weekends.",
+    image: "/granville.png" 
   }
 ];
 
@@ -191,7 +171,7 @@ export default function ProjectShowcase() {
             </div>
           </div>
 
-          {/* 3. RIGHT: THE STICKY INDEX (Scrollbar Hidden) */}
+          {/* 3. RIGHT: THE STICKY INDEX */}
           <div className="w-full lg:w-[28%] lg:sticky lg:top-32 h-fit pb-10">
             <div className="border-l border-black/20 pl-8 space-y-4 max-h-[70vh] overflow-y-auto no-scrollbar py-2">
               {projects.map((project, index) => (

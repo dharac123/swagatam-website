@@ -5,23 +5,23 @@ import { useRef, useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight, Linkedin } from "lucide-react";
 
 const teamMembers = [
+  { name: "Founders", role: "", image: "/founder.jpeg" },
   { name: "Manmeet", role: "Manager", image: "/manmeet.jpeg" },
   { name: "Yashvi", role: "Ads Expert & Creative Designer", image: "/yashvi.jpg" },
-  { name: "Krisha", role: "Social Media Model/Anchor", image: "/krisha.jpg" },
-  { name: "Nikita", role: "Video Editor", image: "/nikita.jpeg" },
-  { name: "Dhananjay", role: "Videographer", image: "/dhananjay.jpg" },
-  { name: "Ayush", role: "Videographer", image: "/ayush.jpg" },
-  { name: "Kavi", role: "Videographer & Editor", image: "/kavi.jpg" },
+  { name: "Manav", role: "Video Editor", image: "/manav.jpeg" },
   { name: "Hritik", role: "Google Expert & HR", image: "/hritik.jpg" },
-  { name: "Manav", role: "Video Editor", image: "/manav.jpg" },
+  { name: "Dhananjay", role: "Videographer", image: "/dhananjay.jpg" },
+  { name: "Nikita", role: "Video Editor", image: "/nikita.jpeg" },
+  { name: "Krisha", role: "Social Media Model/Anchor", image: "/krisha.png" },
+  { name: "Ayush", role: "Videographer", image: "/ayush.jpeg" },
   { name: "Yash", role: "Video Editor", image: "/yash.jpeg" },
+  { name: "Kaviyan", role: "Videographer & Editor", image: "/kaviyan.jpg" },
+  { name: "Snehi", role: "Creative Intern", image: "/snehi.jpeg" },  
   { name: "Jiya", role: "Social Media Intern", image: "/jiya.jpeg" },
   { name: "Nitya", role: "Social Media Intern/Anchor", image: "/nitya.jpeg" },
+  { name: "Sakshi", role: "Graphic Designer", image: "/sakshi.jpeg" },
   { name: "Suchit", role: "Video Editor", image: "/suchit.jpeg" },
   { name: "Rahul", role: "Video Editor", image: "/rahul.jpeg" },
-  { name: "Stuti", role: "Social Media Model/Anchor", image: "/stuti.jpeg" },
-  { name: "Sakshi", role: "Graphic Designer", image: "/sakshi.jpeg" },
-  { name: "Snehi", role: "Creative Intern", image: "/snehi.jpeg" },
   { name: "Nayan", role: "Video Editing Intern", image: "/nayan.jpg" },
 ];
 
@@ -105,7 +105,7 @@ export default function TeamCarousel() {
                   key={index} 
                   className="w-[260px] md:w-[300px] flex-shrink-0 group"
                 >
-                  <div className="relative aspect-[4/5] overflow-hidden bg-neutral-900 border border-white/5 group-hover:border-yellow-400/30 transition-colors duration-500">
+                  <div className="relative rounded-[16px] aspect-[4/5] overflow-hidden bg-neutral-900 border border-white/5 group-hover:border-yellow-400/30 transition-colors duration-500">
                     <img
                       src={member.image}
                       alt={member.name}

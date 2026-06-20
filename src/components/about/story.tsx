@@ -78,7 +78,7 @@ export default function AboutStory() {
                 THE <span className="text-gray-200">SCALE.</span>
               </h2>
               <p className="text-gray-500 text-lg md:text-3xl font-light leading-relaxed max-w-2xl lg:ml-auto">
-                That spark grew into a <span className="text-black font-bold">15-member elite crew</span>. What began as a city page evolved into a full-fledged production and performance powerhouse.
+                That spark grew into a <span className="text-black font-bold">22-member elite crew</span>. What began as a city page evolved into a full-fledged production and performance powerhouse.
               </p>
             </motion.div>
 
