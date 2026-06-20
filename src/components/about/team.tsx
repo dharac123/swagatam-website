@@ -12,7 +12,7 @@ const teamMembers = [
   { name: "Hritik", role: "Google Expert & HR", image: "/hritik.jpg" },
   { name: "Dhananjay", role: "Videographer", image: "/dhananjay.jpg" },
   { name: "Nikita", role: "Video Editor", image: "/nikita.jpeg" },
-  { name: "Krisha", role: "Social Media Model/Anchor", image: "/krisha.png" },
+  { name: "Krisha", role: "Social Media Model/Anchor", image: "/krishaa.png" },
   { name: "Ayush", role: "Videographer", image: "/ayush.jpeg" },
   { name: "Yash", role: "Video Editor", image: "/yash.jpeg" },
   { name: "Kaviyan", role: "Videographer & Editor", image: "/kaviyan.jpg" },
