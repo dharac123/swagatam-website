@@ -45,16 +45,16 @@ const projects = [
     result: "Ranked on Page 1 for high-volume travel keywords, leading to a 2x increase in organic web traffic.",
     image: "/asian-holidays.png" 
   },
-  {
-    id: "05",
-    title: "WILLIAM JOHN'S",
-    serif: "the crust of",
-    tagline: "Pizza Chain Performance Scaling",
-    objective: "Driving consistent footfall and online orders across multiple franchise outlets in the city.",
-    services: "Hyper-local Meta Ads, Motion Graphics, Influencer Tie-ups",
-    result: "Delivered a consistent 4.5x ROAS on digital spend across 10+ operational locations.",
-    image: "/william.png" 
-  },
+{
+  id: "05",
+  title: "Trip IQ Holidays",
+  serif: "the journey of",
+  tagline: "Scaling Travel Package Bookings Across India",
+  objective: "Generating high-intent travel inquiries and increasing holiday package bookings across domestic and international destinations.",
+  services: "Meta Ads, Google Ads, Creative Strategy, Landing Page Optimization",
+  result: "Achieved a 5.2x ROAS while generating 1,500+ qualified travel leads and significantly improving booking conversions.",
+  image: "/trip-iq.jpg"
+},
   {
     id: "06",
     title: "HOUSE OF 147",

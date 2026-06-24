@@ -14,11 +14,11 @@ const projects = [
     stats: "40% Footfall"
   },
   {
-    title: "WILLIAM JOHN'S",
+    title: "Trip IQ",
     category: "Performance Marketing",
     size: "md:col-span-4",
     // High-quality heritage pizza imagery
-    img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=800",
+    img: "bali.jpg",
     stats: "4.5x ROAS"
   },
   {
