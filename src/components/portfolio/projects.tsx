@@ -57,7 +57,7 @@ const projects = [
 },
   {
     id: "06",
-    title: "HOUSE OF 147",
+    title: "THE HOUSE OF 147",
     serif: "the essence of",
     tagline: "Aesthetic Lifestyle Branding",
     objective: "Creating a 'must-visit' buzz through high-aesthetic content that highlights the unique interior and vibe.",
